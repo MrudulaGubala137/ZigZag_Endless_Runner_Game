@@ -10,14 +10,17 @@ public class TileSpawnManager : MonoBehaviour
     public GameObject forwardTile;
     public GameObject[] tilesPrefab;
     int count = 10;
+    float time;
     void Start()
     {
+        
         for (int i = 0; i < count; i++)
         {
           int k = Random.Range(0, 2);
             //Instantiate(rightTile,currentTile.transform.GetChild(1).position,Quaternion.identity);
             currentTile=Instantiate(tilesPrefab[k], currentTile.transform.GetChild(k).position, Quaternion.identity);
-            
+            Destroy(currentTile,3f);
+
         }
     }
 
@@ -27,4 +30,5 @@ public class TileSpawnManager : MonoBehaviour
        
         
     }
+   
 }
