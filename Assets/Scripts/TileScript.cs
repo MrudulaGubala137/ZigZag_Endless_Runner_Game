@@ -24,6 +24,7 @@ public class TileScript : MonoBehaviour
         rb.isKinematic = false;
         yield return new WaitForSeconds(3);
         rb.isKinematic=true;
+        //Debug.Log(gameObject.name);
         if (TileSpawnManager.Instance.name == "RightTile")
         {
             TileSpawnManager.Instance.BackToRightPool(gameObject);

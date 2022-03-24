@@ -13,8 +13,10 @@ public class UIScript : MonoBehaviour
     public Button back;
     public GameObject instructionsPannel;
     public GameObject homePanel;
+   
     void Start()
     {
+        
         play.onClick.AddListener(Play);
         settings.onClick.AddListener(Settings);
         back.onClick.AddListener(Instructions);
@@ -43,6 +45,7 @@ public class UIScript : MonoBehaviour
         instructionsPannel.SetActive(false );
 
     }
+   
 
 }
 

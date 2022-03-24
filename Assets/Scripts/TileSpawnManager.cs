@@ -51,7 +51,7 @@ public class TileSpawnManager : MonoBehaviour
     {
         if(rightTile.Count==0 ||forwardTile.Count==0)
         {
-            CreateTile(20);
+            CreateTile(10);
         }
         int k = Random.Range(0, 10);
         if (k == 5)
@@ -117,6 +117,7 @@ public class TileSpawnManager : MonoBehaviour
     {
        // obj.GetComponent<Rigidbody>().isKinematic = true;
         rightTile.Push(obj);
+        Debug.Log(obj.name);
         rightTile.Peek().SetActive(false);
        
     }

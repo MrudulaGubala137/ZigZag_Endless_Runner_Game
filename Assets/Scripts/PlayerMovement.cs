@@ -13,12 +13,15 @@ public class PlayerMovement: MonoBehaviour
     int score;
     public GameObject temp;
     // TileSpawnManager spawnManager;
+    bool isGameOver=false;
     ScoreManagerScript scoreManager;
+    GameOverScript gameOverScript;
     void Start()
     {
        //spawnManager =GameObject.Find("TileSpawnManager").GetComponent<TileSpawnManager>();
        scoreManager=GameObject.Find("ScoreManager").GetComponent<ScoreManagerScript>();
-      
+        gameOverScript=GameObject.Find("GameOver").GetComponent<GameOverScript>();
+        gameOverScript.gameOverPannel.SetActive(false);
       /*  for (int i = 0; i < 10; i++)
         {
             TileSpawnManager.Instance.SpawnTile();
@@ -42,7 +45,13 @@ public class PlayerMovement: MonoBehaviour
             }
         }
         transform.Translate(direction*playerSpeed*Time.deltaTime);
-        
+        if(transform.position.y<-1f&& isGameOver==false)
+        {
+            isGameOver=true;
+            gameObject.SetActive(false);
+            gameOverScript.gameOver();
+            
+        }
         
 
     }
