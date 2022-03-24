@@ -34,6 +34,6 @@ public class GameOverScript : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
