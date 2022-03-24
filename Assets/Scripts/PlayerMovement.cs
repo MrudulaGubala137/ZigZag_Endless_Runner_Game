@@ -28,6 +28,7 @@ public class PlayerMovement: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetMouseButtonDown(0))
         {
           
@@ -41,6 +42,8 @@ public class PlayerMovement: MonoBehaviour
             }
         }
         transform.Translate(direction*playerSpeed*Time.deltaTime);
+        
+        
 
     }
     private void OnTriggerExit(Collider other)

@@ -115,14 +115,14 @@ public class TileSpawnManager : MonoBehaviour
     }
     public void BackToRightPool(GameObject obj)
     {
-        obj.GetComponent<Rigidbody>().isKinematic = true;
+       // obj.GetComponent<Rigidbody>().isKinematic = true;
         rightTile.Push(obj);
         rightTile.Peek().SetActive(false);
        
     }
     public void BackToForwardPool(GameObject obj)
     {
-        obj.GetComponent<Rigidbody>().isKinematic = true;
+       // obj.GetComponent<Rigidbody>().isKinematic = true;
         forwardTile.Push(obj);
         forwardTile.Peek().SetActive(false);
     }

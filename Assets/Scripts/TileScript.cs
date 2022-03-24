@@ -24,6 +24,14 @@ public class TileScript : MonoBehaviour
         rb.isKinematic = false;
         yield return new WaitForSeconds(3);
         rb.isKinematic=true;
+        if (TileSpawnManager.Instance.name == "RightTile")
+        {
+            TileSpawnManager.Instance.BackToRightPool(gameObject);
+        }
+        if (TileSpawnManager.Instance.name == "ForwardTile")
+        {
+            TileSpawnManager.Instance.BackToForwardPool(gameObject);
+        }
 
     }
     public void OnTriggerEnter(Collider other)
@@ -33,14 +41,7 @@ public class TileScript : MonoBehaviour
             TileSpawnManager.Instance.SpawnTile();
             StartCoroutine(FallDown());
         }
-        if(other.gameObject.tag =="RightTile")
-        {
-            TileSpawnManager.Instance.BackToRightPool(other.gameObject);
-        }
-        if(other.gameObject.tag =="ForwardTile")
-        {
-            TileSpawnManager.Instance.BackToForwardPool(other.gameObject);
-        }
+        
     
 }
   
