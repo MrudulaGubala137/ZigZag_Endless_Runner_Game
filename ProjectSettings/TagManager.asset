@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Tile
   - coin
+  - Right
+  - Forward
   layers:
   - Default
   - TransparentFX
