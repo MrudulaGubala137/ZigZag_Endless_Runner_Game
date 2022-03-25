@@ -16,6 +16,8 @@ public class PlayerMovement: MonoBehaviour
     bool isGameOver=false;
     ScoreManagerScript scoreManager;
     GameOverScript gameOverScript;
+    public GameObject player;
+    public Camera cam;
     void Start()
     {
        //spawnManager =GameObject.Find("TileSpawnManager").GetComponent<TileSpawnManager>();
@@ -31,6 +33,11 @@ public class PlayerMovement: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        if(player!=null)
+        {
+            cam.transform.position = new Vector3(player.transform.position.x, cam.transform.position.y, cam.transform.position.z);
+        }
         
         if(Input.GetMouseButtonDown(0))
         {
